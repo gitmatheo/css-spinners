@@ -91,7 +91,9 @@ h1 {
   border: 6px solid transparent;
   border-top-color: red;
   border-bottom-color: red;
-  animation: spin 1.5s ease-in-out infinite;
+  animation:
+    spin 1.5s ease-in-out infinite,
+    scale 1.5s ease-in-out infinite;
 
 }
 
@@ -105,13 +107,25 @@ h1 {
   animation: spinReverse 1.5s ease-in-out infinite;
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(90deg) scale(1.2);
+    transform: rotate(90deg);
 
   }
   100% {
@@ -167,9 +181,6 @@ h1 {
   }
 }
 
-
-
-
 .spinner-3:after {
   position: absolute;
   width: 110px;
@@ -214,7 +225,9 @@ h1 {
   border: 4px solid transparent;
   border-top-color: red;
   border-bottom-color: red;
-  animation: spin 1.5s ease-in-out infinite;
+  animation:
+    spin 1.5s ease-in-out infinite,
+    scale 1.5s ease-in-out infinite;
 
 }
 
@@ -223,7 +236,7 @@ h1 {
   top:0px;
   left:0px;
   background-color: red;
-  animation: scale 1.5s ease-in-out infinite;
+  animation: scale2 1.5s ease-in-out infinite;
 }
 
 
@@ -236,7 +249,7 @@ h1 {
     top:0px;
     left:0px;
     background-color: red;
-    animation: scale 1.5s ease-in-out infinite;
+    animation: scale2 1.5s ease-in-out infinite;
   }
 }
 
@@ -250,7 +263,7 @@ h1 {
   animation: spinReverse 1.5s ease-in-out infinite;
 }
 
-@keyframes scale {
+@keyframes scale2 {
   0% {
     transform: scale(0.2);
     opacity: 0.5;
@@ -265,8 +278,6 @@ h1 {
   }
 }
 
-
-
 .spinner-6 {
   &::after {
     position: absolute;
@@ -275,7 +286,7 @@ h1 {
     top:0px;
     left:0px;
     background-color: red;
-    animation: scale 1.5s linear infinite;
+    animation: scale2 1.5s linear infinite;
   }
 }
 
@@ -289,17 +300,135 @@ h1 {
   animation: spinReverse 1.5s linear infinite;
 }
 
-@keyframes scale {
+.spinner-7 {
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top:0px;
+    &:nth-child(1) {
+      left:-40px;
+      animation: bounce 1s ease-in-out infinite;
+    }
+    &:nth-child(2) {
+      animation: bounce 1s ease-in-out 0.25s infinite;
+    }
+    &:nth-child(3) {
+      left:40px;
+      animation: bounce 1s ease-in-out 0.50s infinite;
+    }
+    &:nth-child(4) {
+      left:80px;
+      animation: bounce 1s ease-in-out 0.75s infinite;
+    }
+  }
+}
+
+@keyframes bounce {
   0% {
-    transform: scale(0.2);
-    opacity: 0.5;
+    top: 0px;
   }
   50% {
-    transform: scale(0.8);
-    opacity: 1;
+    top: 80px;
+    opacity: 0.2;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+
+.spinner-8 {
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top:40px;
+    &:nth-child(1) {
+      left:-40px;
+      animation: bounce2 1s ease-in-out infinite;
+    }
+    &:nth-child(2) {
+      animation: bounce2 1s ease-in-out 0.25s infinite;
+    }
+    &:nth-child(3) {
+      left:40px;
+      animation: bounce2 1s ease-in-out 0.50s infinite;
+    }
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translateX(20px);
+    opacity: 0.5;
   }
   100% {
-    transform: scale(0.2);
-    opacity: 0.5;
+    transform: translateX(0px);
+  }
+}
+
+
+.spinner-9 {
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top:0px;
+    &:nth-child(1) {
+      animation: rotate 2s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: rotate 2s linear 0.5s infinite;
+    }
+    &:nth-child(3) {
+      animation: rotate 2s linear 1s infinite;
+    }
+    &:nth-child(4) {
+      animation: rotate 2s linear 1.5s infinite;
+    }
+  }
+}
+
+
+
+@keyframes rotate {
+  0% {
+    top:0px;
+    left:0px;
+
+  }
+  25% {
+    top:0px;
+    left:100px;
+    opacity: 0.3;
+  }
+  50% {
+    top:100px;
+    left:100px;
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  75% {
+    top:100px;
+    left:0px;
+
+  }
+  100% {
+    top:0px;
+    left:0px;
   }
 }
