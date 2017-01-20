@@ -86,8 +86,8 @@ h1 {
   position: absolute;
   width: 110px;
   height: 110px;
-  top:-11px;
-  left:-11px;
+  top:-12px;
+  left:-12px;
   border: 6px solid transparent;
   border-top-color: red;
   border-bottom-color: red;
@@ -104,10 +104,6 @@ h1 {
   border-bottom-color: red;
   animation: spinReverse 1.5s ease-in-out infinite;
 }
-
-
-
-
 
 
 @keyframes spin {
@@ -171,17 +167,7 @@ h1 {
   }
 }
 
-@keyframes spinReverse {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
+
 
 
 .spinner-3:after {
@@ -218,14 +204,102 @@ h1 {
   }
 }
 
-@keyframes spinReverse {
+
+.spinner-4:after {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top:-4px;
+  left:-4px;
+  border: 4px solid transparent;
+  border-top-color: red;
+  border-bottom-color: red;
+  animation: spin 1.5s ease-in-out infinite;
+
+}
+
+.spinner-4:before {
+  position: absolute;
+  top:0px;
+  left:0px;
+  background-color: red;
+  animation: scale 1.5s ease-in-out infinite;
+}
+
+
+
+.spinner-5 {
+  &::after {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top:0px;
+    left:0px;
+    background-color: red;
+    animation: scale 1.5s ease-in-out infinite;
+  }
+}
+
+.spinner-5:before {
+  position: absolute;
+  top:-4px;
+  left:-4px;
+  border: 4px solid transparent;
+  border-top-color: red;
+  border-bottom-color: red;
+  animation: spinReverse 1.5s ease-in-out infinite;
+}
+
+@keyframes scale {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0.2);
+    opacity: 0.5;
   }
   50% {
-    transform: rotate(-90deg);
+    transform: scale(0.8);
+    opacity: 1;
   }
   100% {
-    transform: rotate(-360deg);
+    transform: scale(0.2);
+    opacity: 0.5;
+  }
+}
+
+
+
+.spinner-6 {
+  &::after {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top:0px;
+    left:0px;
+    background-color: red;
+    animation: scale 1.5s linear infinite;
+  }
+}
+
+.spinner-6:before {
+  position: absolute;
+  top:-4px;
+  left:-4px;
+  border: 4px solid transparent;
+  border-top-color: red;
+  border-bottom-color: red;
+  animation: spinReverse 1.5s linear infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0.5;
   }
 }
